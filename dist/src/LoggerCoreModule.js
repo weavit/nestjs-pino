@@ -108,7 +108,7 @@ function createLoggerMiddlewares(params, useExisting) {
     // FIXME: params type here is pinoHttp.Options | pino.DestinationStream
     // pinoHttp has two overloads, each of them takes those types
     // @ts-ignore
-    return [express_ctx_1.middleware, pinoHttp(params, pino_multi_stream_1.multistream([client])), bindLoggerMiddleware];
+    return [express_ctx_1.middleware, pinoHttp(params, pino_multi_stream_1.multistream([{ level: params.level, stream: process.stdout }, client])), bindLoggerMiddleware];
 }
 function bindLoggerMiddleware(req, _res, next) {
     express_ctx_1.setValue(constants_1.LOGGER_KEY, req.log);

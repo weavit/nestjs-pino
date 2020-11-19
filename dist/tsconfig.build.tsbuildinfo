@@ -1932,7 +1932,7 @@
         "affectsGlobalScope": false
       },
       "../src/LoggerCoreModule.ts": {
-        "version": "34ef6b8c8a48a708e2a2c4b0ada0d4e9d7122b44f584dfd61b6651e817d56d20",
+        "version": "f8833cfad513a88cd07892c7744526b9c6e302af1cc4c9513709eaa468a9a203",
         "signature": "89943ede3ba1fc4c07e3f88175e8836a840b8a09521e9acbdff0a0e53b76ec9f",
         "affectsGlobalScope": false
       },
