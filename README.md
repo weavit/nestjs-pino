@@ -2,7 +2,7 @@
   <img alt="NestJS-Pino logo" src="https://raw.githubusercontent.com/iamolegga/nestjs-pino/master/logo.png"/>
 </p>
 
-<h1 align="center">NestJS-Pino</h1>
+<h1 align="center">NestJS-Pino + Sentry</h1>
 
 <p align="center">
   <a href="https://www.npmjs.com/package/nestjs-pino">
