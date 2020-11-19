@@ -1,6 +1,8 @@
 import { Injectable, Inject, Scope } from "@nestjs/common";
 import * as pino from "pino";
 import { getValue } from "express-ctx";
+import * as Sentry from '@sentry/node';
+import { multistream } from 'pino-multi-stream';
 import { PARAMS_PROVIDER_TOKEN, LOGGER_KEY } from "./constants";
 import { Params, isPassedLogger } from "./params";
 
@@ -36,7 +38,27 @@ export class PinoLogger implements PinoMethods {
       } else if (isPassedLogger(pinoHttp)) {
         outOfContext = pinoHttp.logger;
       } else {
-        outOfContext = pino(pinoHttp);
+        const client = {
+          level: 'warn',
+          stream: {
+            write: (record: any) => {
+              const data = JSON.parse(record);
+              Sentry.captureEvent({
+                // @ts-ignore
+                level: 'error',
+                timestamp: data.time,
+                message: data.msg,
+                extra: data,
+              });
+            },
+          },
+        };
+        if (pinoHttp) {
+          // @ts-ignore
+          outOfContext = pino(pinoHttp as any, multistream([{ level: pinoHttp.level, stream: process.stdout }, client]));
+        } else {
+          outOfContext = pino(pinoHttp);
+        }
       }
     }
 
