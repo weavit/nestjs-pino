@@ -1,0 +1,42 @@
+ 
+{
+    "extends": ["config:base"],
+    "timezone": "Asia/Shanghai",
+    "branchPrefix": "renovate_",
+    "schedule": ["before 3am on the first day of the month"],
+    "rebaseConflictedPrs": false,
+    "rebaseStalePrs": false,
+    "ignorePresets": [":prHourlyLimit2"],
+    "packageRules": [
+      {
+        "managers": ["npm"],
+        "depTypeList": ["devDependencies"],
+        "updateTypes": [
+          "major",
+          "minor",
+          "patch",
+          "pin",
+          "digest",
+          "lockFileMaintenance",
+          "rollback",
+          "bump"
+        ],
+        "groupName": "devDependencies"
+      },
+      {
+        "managers": ["npm"],
+        "depTypeList": ["dependencies"],
+        "updateTypes": [
+          "major",
+          "minor",
+          "patch",
+          "pin",
+          "digest",
+          "lockFileMaintenance",
+          "rollback",
+          "bump"
+        ],
+        "groupName": "dependencies"
+      }
+    ]
+  }
