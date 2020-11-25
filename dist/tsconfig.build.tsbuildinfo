@@ -1912,8 +1912,8 @@
         "affectsGlobalScope": false
       },
       "../src/params.ts": {
-        "version": "2b5ac75827c7ba0ee4ed2741de4debae5cbb58eafcc533c1aade45177d372ac9",
-        "signature": "b6bbffc2b45bdcfda9d608a8940c4a3b71956daaabf421acbfc3663309e05791",
+        "version": "5c426e2149e1ccca81bc1ca511281d0aa37bac784bb0c966f55ecdcb42fae035",
+        "signature": "337c78d03ebcf3d34844b98f3ef4dad03ce97f01bc2a55cb5cc269dc44305c97",
         "affectsGlobalScope": false
       },
       "../src/PinoLogger.ts": {
@@ -1932,7 +1932,7 @@
         "affectsGlobalScope": false
       },
       "../src/LoggerCoreModule.ts": {
-        "version": "f8833cfad513a88cd07892c7744526b9c6e302af1cc4c9513709eaa468a9a203",
+        "version": "fa26de898d19e35f5f46d2afe6eabd65de164a75ce3bc318e298b1a7c0d10d87",
         "signature": "89943ede3ba1fc4c07e3f88175e8836a840b8a09521e9acbdff0a0e53b76ec9f",
         "affectsGlobalScope": false
       },
