@@ -35,6 +35,7 @@ export interface Params {
     | pinoHttp.Options
     | DestinationStream
     | [pinoHttp.Options, DestinationStream];
+  disabled_http_logging?: boolean;
   name?: string;
   level?: string;
   exclude?: Parameters<MiddlewareConfigProxy["exclude"]>;

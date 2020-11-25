@@ -62,9 +62,12 @@ let LoggerCoreModule = LoggerCoreModule_1 = class LoggerCoreModule {
         };
     }
     configure(consumer) {
-        const { exclude, forRoutes = DEFAULT_ROUTES, pinoHttp, useExisting, sentry: sentryConfig, } = this.params;
+        const { exclude, forRoutes = DEFAULT_ROUTES, pinoHttp, useExisting, disabled_http_logging, sentry: sentryConfig, } = this.params;
         Sentry.init(sentryConfig || {});
         const middlewares = createLoggerMiddlewares(pinoHttp || {}, useExisting);
+        if (disabled_http_logging) {
+            return;
+        }
         if (exclude) {
             consumer
                 .apply(...middlewares)

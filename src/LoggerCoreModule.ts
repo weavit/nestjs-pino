@@ -74,12 +74,17 @@ export class LoggerCoreModule implements NestModule {
       forRoutes = DEFAULT_ROUTES,
       pinoHttp,
       useExisting,
+      disabled_http_logging,
       sentry: sentryConfig,
     } = this.params;
 
     Sentry.init(sentryConfig || {});
 
     const middlewares = createLoggerMiddlewares(pinoHttp || {}, useExisting);
+
+    if (disabled_http_logging) {
+      return;
+    }
 
     if (exclude) {
       consumer
