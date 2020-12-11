@@ -104,6 +104,7 @@ let PinoLogger = class PinoLogger {
                 }
             }
             else {
+                // @ts-ignore
                 args = [{ [this.contextName]: context }, ...args];
             }
         }

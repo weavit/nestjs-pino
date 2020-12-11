@@ -122,6 +122,7 @@ export class PinoLogger implements PinoMethods {
           ];
         }
       } else {
+        // @ts-ignore
         args = [{ [this.contextName]: context }, ...args];
       }
     }
