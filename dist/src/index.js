@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.getLoggerToken = exports.InjectPinoLogger = exports.PinoLogger = exports.Logger = exports.LoggerModule = void 0;
 var LoggerModule_1 = require("./LoggerModule");
 Object.defineProperty(exports, "LoggerModule", { enumerable: true, get: function () { return LoggerModule_1.LoggerModule; } });
 var Logger_1 = require("./Logger");
